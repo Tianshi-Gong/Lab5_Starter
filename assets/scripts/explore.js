@@ -36,6 +36,10 @@ function init() {
       }
   }
 
+if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = populateVoiceList;
+}
+
   populateVoiceList(); 
 
   speakButton.addEventListener('click', speakText);
